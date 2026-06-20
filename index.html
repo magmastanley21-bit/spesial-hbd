@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Everything</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="petals-container"></div>
+
+    <div id="gift-overlay">
+        <div class="gift-container">
+            <div class="sparkles">✨ 🌸 ✨</div>
+            <p class="gift-hint">Ada sebuah bingkisan kecil untukmu...<br>Sentuh kadonya untuk membuka 💖</p>
+            
+            <div class="gift-box" id="theGift">
+                <div class="gift-lid"></div>
+                <div class="gift-body">
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+                </div>
+                <div class="gift-bow-left"></div>
+                <div class="gift-bow-right"></div>
+                <div class="gift-center-knot"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden-content">
+
+        <div class="music-card">
+            <div class="album-art"></div>
+            <div class="music-info">
+                <h3 class="song-title">Semua Aku Dirayakan</h3>
+                <p class="artist-name">NADIN AMIZAH</p>
+            </div>
+            <div class="progress-container"><div class="progress-bar"></div></div>
+            <div class="time-info"><span>1:36</span><span>4:58</span></div>
+            <div class="controls">
+                <button class="control-btn">⏮</button>
+                <button class="control-btn play-btn" id="musicToggle">⏸</button>
+                <button class="control-btn">⏭</button>
+            </div>
+            <audio id="myAudio" loop preload="auto">
+                <source src="musik.mp3" type="audio/mp3">
+                <source src="https://files.catbox.moe/k3hgh7.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="section fullscreen">
+            <div class="container">
+                <p class="subtitle">✨ a birthday serenade in bloom ✨</p>
+                <h1 class="title">Happy Birthday,<br><span>My Everything</span></h1>
+                <p class="description">Today the whole universe is celebrating the day you were born into my world. 🌸 To the one who holds my heart, this is for you. 👑💖</p>
+                <div class="flower-btn spin-flower">🌸</div>
+                <p class="scroll-hint">SCROLL DOWN TO SEE YOUR SURPRISE<br>↓ ↓ ↓</p>
+            </div>
+        </div>
+
+        <div class="section fade-in-element">
+            <div class="letter-box">
+                <div class="letter-header">
+                    <h2>For My Favorite Person ❤✨</h2>
+                </div>
+                <div class="letter-body">
+                    <p>Selamat ulang tahun, Sayang! 🌸🎂</p>
+                    <p>Hari ini semesta lagi ikut bahagia karena merayakan hari lahirnya orang paling berharga di hidupku. 🥰 Terima kasih banyak ya sudah lahir ke dunia dan membawa begitu banyak warna indah di hidupku yang dulunya biasa aja. 🌈💖</p>
+                    <p>Semoga di usiamu yang baru ini, kamu selalu dikelilingi kebahagiaan yang tulus, kesehatan yang baik, dan semua mimpi-mimpi hebatmu bisa terwujud satu per satu. 🌟 Aku akan selalu di sini buat nemenin dan dukung kamu dalam setiap prosesnya. 🤝💕</p>
+                    <p class="love-signature">— Yours, always & forever 🌹💑</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in-element">
+            <div class="reasons-container">
+                <p class="reasons-subtitle">✨ a thousand reasons why i love you ✨</p>
+                <h2 class="reasons-title">What I Celebrate <span>About You</span></h2>
+                
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-icon">😊</div>
+                        <h3>Your Smile</h3>
+                        <p>Senyum kamu selalu bisa bikin hari-hari aku yang mendung langsung jadi cerah seketika! ✨ Tiap kali liat kamu tersenyum tulus, rasanya semua capek dan beban pikiran aku langsung hilang gitu aja. 🥰 Semanis itu!</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">💫</div>
+                        <h3>Your Soul</h3>
+                        <p>Rare, luminous, and more precious than anything this world has to offer. 💖 Kamu punya hati yang sangat tulus dan menenangkan. Berada di dekatmu selalu berasa aman, nyaman, dan seperti pulang ke rumah. 🏡✨</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">🌸</div>
+                        <h3>Your Kindness</h3>
+                        <p>The way you love and care for everyone around you makes the world a softer place. 🕊💕 Kelembutan hatimu dan caramu memperlakukanku dengan penuh kesabaran adalah hal yang paling aku syukuri setiap hari.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">🤭</div>
+                        <h3>Your Laughter</h3>
+                        <p>Suara tawa kamu adalah melodi paling favorit yang selalu ingin aku dengar setiap hari! 🎵 Merupakan kebahagiaan tersendiri buat aku kalau bisa jadi alasan di balik tawa dan kebahagiaan kecilmu itu. 🤪💘</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">🌺</div>
+                        <h3>Your Strength</h3>
+                        <p>Aku selalu kagum melihat betapa hebat, tangguh, dan kuatnya kamu melewati segala proses hidupmu. 💪🌟 Kamu adalah sosok inspirasi terbesarku buat gak gampang menyerah sama keadaan. Proud of you, sayang! 👑</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon">💖</div>
+                        <h3>Simply You</h3>
+                        <p>Every version of you is more than enough for me. 😘 Gak perlu jadi orang lain, karena dirimu apa adanya udah sempurna banget di mataku. Terima kasih ya sudah memilih untuk jalan bersamaku sampai hari ini! 🥂✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in-element">
+            <div class="photo-gallery">
+                <h3 class="gallery-title">Our Beautiful <span>Pictures</span></h3>
+                <p class="gallery-subtitle">captured in time — celebrating us 📸💞</p>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="foto1.jpg" alt="Foto Berdua 1">
+                        <p class="photo-caption">you & i 👩‍❤️‍👨</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="foto2.jpg" alt="Foto Berdua 2">
+                        <p class="photo-caption">against the world 🌎✨</p>
+                    </div>
+                </div>
+
+                <div class="extra-content-timeline">
+                    <div class="timeline-title">Our Next Chapters 🗓✨</div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-emoji">🗺🚀</div>
+                        <h4>More Adventures Together</h4>
+                        <p>Mari jelajahi lebih banyak tempat baru, berburu makanan enak, bikin kenangan konyol, dan abadikan setiap momen manis berdua tanpa ada yang terlewat!</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-emoji">🫂⛈</div>
+                        <h4>Through Every Season</h4>
+                        <p>Gak cuma pas lagi senang aja, aku janji bakal selalu ada di sampingmu pas hari-harimu lagi berat. Kita lewati badainya bareng-bareng ya, sayang.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-emoji">🌱📈</div>
+                        <h4>Growing Old & Better</h4>
+                        <p>Menjadi dewasa dan bertumbuh bareng kamu adalah rencana masa depan yang paling aku tunggu-tunggu. Bersama kamu, aku mau jadi versi terbaik diriku.</p>
+                    </div>
+                </div>
+
+                <div class="closing-message">
+                    <p class="closing-text">And here's to many more chapters, many more laughs, and many more birthdays celebrated together. I love you, today, tomorrow, and endlessly. 🕊💖✨</p>
+                    <div class="end-heart">❤</div>
+                    <p class="copyright">made with love for my favorite person • 2026</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

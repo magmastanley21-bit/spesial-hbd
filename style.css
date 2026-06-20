@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #2c141d 0%, #110408 100%);
+    color: #fdf0f2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* --- LAYAR KADO UPGRADE ESTETIK --- */
+#gift-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0f0307;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.gift-container { 
+    text-align: center; 
+    perspective: 1000px;
+}
+.sparkles {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite;
+}
+.gift-hint {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #c9a0ac;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* DESAIN KADO ELEGAN MINIMALIS */
+.gift-box {
+    position: relative;
+    width: 140px; height: 130px;
+    background: #e8a0b5;
+    border-radius: 0 0 12px 12px;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    animation: shakeGift 3s infinite ease-in-out;
+    display: inline-block;
+}
+.gift-body {
+    position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+}
+.gift-lid {
+    position: absolute;
+    top: -18px; left: -8px;
+    width: 156px; height: 24px;
+    background: #f5b0c4;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 5;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+}
+/* Pita Garis Salib */
+.ribbon-v {
+    position: absolute; top: 0; left: 58px; width: 24px; height: 100%;
+    background: #ffd700; box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+.ribbon-h {
+    position: absolute; top: 50px; left: 0; width: 100%; height: 24px;
+    background: #ffd700; box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+/* Pita Ikat Kupu-Kupu Atas */
+.gift-bow-left, .gift-bow-right {
+    position: absolute; top: -40px; width: 45px; height: 30px;
+    border: 6px solid #ffd700; border-radius: 50%; z-index: 4;
+    transition: transform 0.8s ease, opacity 0.5s;
+}
+.gift-bow-left { left: 24px; transform: rotate(-25deg); }
+.gift-bow-right { right: 24px; transform: rotate(25deg); }
+.gift-center-knot {
+    position: absolute; top: -23px; left: 56px; width: 28px; height: 24px;
+    background: #e6c300; border-radius: 6px; z-index: 6;
+}
+
+/* Animasi Kado Saat Terbuka Melayang */
+.gift-box.open .gift-lid { transform: translateY(-120px) rotate(-20deg) scale(0.8); opacity: 0; }
+.gift-box.open .gift-bow-left { transform: translate(-40px, -100px) rotate(-45deg); opacity: 0; }
+.gift-box.open .gift-bow-right { transform: translate(40px, -100px) rotate(45deg); opacity: 0; }
+
+@keyframes shakeGift {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    10%, 20% { transform: translateY(-4px) rotate(-3deg); }
+    15%, 25% { transform: translateY(-4px) rotate(3deg); }
+    30% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ATURAN SEMBUNYI-MUNCUL ISI WEB */
+.hidden-content { opacity: 0; pointer-events: none; height: 100vh; overflow: hidden; }
+.show-content { opacity: 1; pointer-events: auto; height: auto; overflow: visible; transition: opacity 1.5s ease; }
+
+/* --- BAGIAN ISI UTAMA --- */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+.fullscreen { height: 100vh; padding: 0; }
+.container { text-align: center; }
+.subtitle { font-family: 'Playfair Display', serif; font-style: italic; color: #c9a0ac; font-size: 1.05rem; margin-bottom: 15px; }
+.title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 400; margin: 0; line-height: 1.2; }
+.title span { color: #e8a0b5; font-style: italic; }
+.description { font-size: 0.9rem; color: #c9a0ac; max-width: 440px; margin: 25px auto; line-height: 1.6; }
+
+.flower-btn { font-size: 4rem; margin: 20px 0; display: inline-block; }
+.spin-flower { animation: spinContinuous 14s linear infinite; }
+@keyframes spinContinuous { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.scroll-hint { font-size: 0.65rem; letter-spacing: 2px; color: #8c6471; margin-top: 30px; animation: pulse 2s infinite; }
+
+@keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* --- MUSIC CARD MELAYANG --- */
+.music-card {
+    position: fixed; bottom: 30px; left: 30px; width: 180px;
+    background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); z-index: 100; text-align: center;
+}
+.album-art { width: 100%; height: 120px; background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500'); background-size: cover; background-position: center; border-radius: 10px; filter: grayscale(100%); margin-bottom: 10px; }
+.song-title { font-size: 0.8rem; margin: 5px 0 2px 0; color: #fdf0f2; }
+.artist-name { font-size: 0.65rem; color: #c9a0ac; margin: 0 0 10px 0; }
+.progress-container { width: 100%; height: 3px; background: rgba(255, 255, 255, 0.1); }
+.progress-bar { width: 35%; height: 100%; background: #e8a0b5; }
+.time-info { display: flex; justify-content: space-between; font-size: 0.55rem; color: #8c6471; margin-top: 4px; margin-bottom: 8px; }
+.controls { display: flex; justify-content: center; gap: 12px; }
+.control-btn { background: none; border: none; color: #c9a0ac; cursor: pointer; font-size: 0.8rem; }
+.play-btn { font-size: 1rem; color: #fdf0f2; }
+
+/* --- SURAT CINTA --- */
+.letter-box {
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08); color: #fdf0f2;
+    padding: 45px 35px; border-radius: 20px; width: 85%; max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); font-family: 'Playfair Display', serif;
+}
+.letter-header h2 { color: #e8a0b5; font-size: 1.6rem; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 12px; margin-top: 0; }
+.letter-body p { font-size: 1.05rem; line-height: 1.8; color: #c9a0ac; text-align: left; }
+.love-signature { text-align: right; font-style: italic; color: #e8a0b5; margin-top: 35px !important; }
+
+/* --- 6 KOTAK ALASAN --- */
+.reasons-container { width: 100%; max-width: 950px; text-align: center; }
+.reasons-title { font-family: 'Playfair Display', serif; font-size: 2.3rem; color: #fdf0f2; margin: 0; }
+.reasons-title span { font-style: italic; color: #e8a0b5; }
+.reasons-subtitle { font-size: 0.85rem; color: #8c6471; font-style: italic; margin-bottom: 35px; letter-spacing: 1px; }
+.reasons-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.reason-card {
+    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px); padding: 30px 20px; border-radius: 16px;
+    width: 31%; min-width: 260px; text-align: center; box-sizing: border-box;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.reason-card:hover { transform: translateY(-6px); background: rgba(255, 255, 255, 0.05); border-color: rgba(232, 160, 181, 0.3); }
+.reason-icon { font-size: 2.2rem; margin-bottom: 12px; }
+.reason-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #e8a0b5; margin: 0 0 12px 0; }
+.reason-card p { font-size: 0.85rem; line-height: 1.7; color: #c9a0ac; margin: 0; text-align: center; }
+
+/* --- GALERI FOTO BERDUA --- */
+.photo-gallery { width: 100%; max-width: 750px; text-align: center; }
+.gallery-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fdf0f2; margin: 0; }
+.gallery-title span { font-style: italic; color: #e8a0b5; }
+.gallery-subtitle { font-size: 0.9rem; color: #8c6471; font-style: italic; margin-bottom: 35px; }
+.photo-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+.photo-card { 
+    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); 
+    padding: 12px; border-radius: 16px; width: 44%; max-width: 250px; min-width: 165px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease;
+}
+.photo-card:hover { transform: translateY(-5px); }
+.photo-card img { width: 100%; height: 260px; object-fit: cover; border-radius: 10px; filter: grayscale(100%); transition: filter 0.6s ease; }
+.photo-card:hover img { filter: grayscale(0%); }
+.photo-caption { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #e8a0b5; margin-top: 12px; }
+
+/* --- BAGIAN TAMBAHAN TIMELINE DI BAWAH FOTO (BIAR PANJANG) --- */
+.extra-content-timeline {
+    max-width: 550px; margin: 60px auto; text-align: left;
+    border-left: 2px dashed rgba(232, 160, 181, 0.2); padding-left: 25px; box-sizing: border-box;
+}
+.timeline-title {
+    font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #e8a0b5;
+    margin-bottom: 35px; font-style: italic; text-align: center; margin-left: -25px;
+}
+.timeline-item { position: relative; margin-bottom: 35px; }
+.timeline-emoji { position: absolute; left: -45px; top: -2px; font-size: 1.3rem; background: #1a080f; padding: 2px; }
+.timeline-item h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fdf0f2; margin: 0 0 8px 0; }
+.timeline-item p { font-size: 0.85rem; line-height: 1.6; color: #c9a0ac; margin: 0; }
+
+/* PESAN PENUTUP AKHIR */
+.closing-message { margin-top: 70px; padding: 0 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; }
+.closing-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.8; color: #c9a0ac; max-width: 500px; margin: 0 auto; }
+.end-heart { font-size: 1.6rem; color: #e8a0b5; margin-top: 20px; animation: heartbeat 1.5s infinite; display: inline-block; }
+.copyright { font-size: 0.65rem; color: #5e414c; margin-top: 40px; letter-spacing: 1px; text-transform: uppercase; }
+
+@keyframes heartbeat { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+/* --- BACKGROUND KELOPAK --- */
+#petals-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.petal { position: absolute; background-color: #ffb7c5; border-radius: 15px 0 15px 0; opacity: 0.5; animation-name: fall, sway; animation-iteration-count: infinite, infinite; animation-direction: normal, alternate; animation-timing-function: linear, ease-in-out; }
+@keyframes fall { 0% { top: -10%; } 100% { top: 110%; } }
+@keyframes sway { 0% { transform: translateX(0px) rotate(0deg); } 100% { transform: translateX(25px) rotate(45deg); } }
+
+/* --- SCROLL EFFECT MUNCUL LEMBUT --- */
+.fade-in-element { opacity: 0; transform: translateY(40px); transition: opacity 1.2s ease, transform 1.2s ease; }
+.fade-in-element.is-visible { opacity: 1; transform: translateY(0); }
